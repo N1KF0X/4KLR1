@@ -34,19 +34,43 @@ namespace LR1
             this.Init_Button("CRM", 9, 278, 96, 24, 6);
             this.Init_Button("проф.", 9, 305, 96, 24, 7);
             this.Init_Button("?", 9, 334, 96, 24, 7);
+            this.Init_Radio_Button("Активные", 110, 306, 75, 17, 1);
+            this.Init_Radio_Button("Не активные", 191, 306, 88, 17, 2);
+            Label label = new Label
+            {
+                Name = "label",
+                Location = new Point(88, 7),
+                Size = new System.Drawing.Size(228, 37),
+                Text = "Абоненты ТНС",
+                Font = new System.Drawing.Font("Microsoft Sans Serif", 24F),
+
+        };
+            this.Controls.Add(label);
         }
 
         private void Init_Button(string text, int x, int y, int width, int height, int number)
         {
             Button button = new Button
             {
-                Text = text
+                Text = text,
+                Location = new Point(x, y),
+                Size = new System.Drawing.Size(width, height),
+                Name = "button" + Convert.ToString(number),
             };
             button.Click += button_Click;
-            button.Location = new Point(x, y);
-            button.Size = new System.Drawing.Size(width, height);
-            button.Name = "button" + Convert.ToString(number);
             this.Controls.Add(button);
+        }
+
+        private void Init_Radio_Button(string text, int x, int y, int width, int height, int number)
+        {
+            RadioButton radioButton = new RadioButton
+            {
+                Text = text,
+                Location = new Point(x, y),
+                Size = new System.Drawing.Size (width, height),
+                Name = "radioButton" + Convert.ToString(number)
+            };
+            this.Controls.Add(radioButton);
         }
     }
 }
