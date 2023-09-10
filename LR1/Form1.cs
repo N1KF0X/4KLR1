@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LR1.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,12 +41,34 @@ namespace LR1
             {
                 Name = "label",
                 Location = new Point(88, 7),
-                Size = new System.Drawing.Size(228, 37),
+                Size = new Size(228, 37),
                 Text = "Абоненты ТНС",
-                Font = new System.Drawing.Font("Microsoft Sans Serif", 24F),
+                Font = new Font("Microsoft Sans Serif", 24F),
 
-        };
+            };
+            PictureBox pictureBox1 = new PictureBox 
+            {
+                BackgroundImage = Resources._123,
+                Location = new Point(9, 10),
+                Margin = new Padding(2),
+                Name = "pictureBox1",
+                Size = new Size(75, 81),
+                TabIndex = 0,
+                TabStop = false,
+            };
+            PictureBox pictureBox2 = new PictureBox
+            {
+                BackgroundImage = Resources._123,
+                Location = new Point(652, 10),
+                Margin = new Padding(2),
+                Name = "pictureBox2",
+                Size = new Size(75, 81),
+                TabIndex = 14,
+                TabStop = false,
+            };
             this.Controls.Add(label);
+            this.Controls.Add(pictureBox1);
+            this.Controls.Add(pictureBox2);
         }
 
         private void Init_Button(string text, int x, int y, int width, int height, int number)
@@ -54,7 +77,7 @@ namespace LR1
             {
                 Text = text,
                 Location = new Point(x, y),
-                Size = new System.Drawing.Size(width, height),
+                Size = new Size(width, height),
                 Name = "button" + Convert.ToString(number),
             };
             button.Click += button_Click;
@@ -67,7 +90,7 @@ namespace LR1
             {
                 Text = text,
                 Location = new Point(x, y),
-                Size = new System.Drawing.Size (width, height),
+                Size = new Size (width, height),
                 Name = "radioButton" + Convert.ToString(number)
             };
             this.Controls.Add(radioButton);
